@@ -3,10 +3,8 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
-  Routes,
 } from "react-router-dom";
 import CoinList from "./components/CoinList";
-import CoinLayout from "./layouts/CoinLayout";
 import Coin, { coinLoader } from "./pages/Coin";
 import CoinError from "./pages/CoinError";
 
@@ -19,8 +17,8 @@ function App() {
         
           <Route path="/" element={<CoinList />} />
         
-          <Route path="coins" element={<CoinLayout/>}>
-            <Route path=":id" element={<Coin />} loader={coinLoader} />
+          <Route path="coins">
+            <Route path=":id" element={<Coin />} loader={coinLoader}  errorElement={CoinError} />
           </Route>
         
         </Route>

@@ -25,6 +25,32 @@ th {
   white-space: nowrap;
 }
 
-th img {
+td img {
   width: 30px;
+}
+
+.card {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.card-header span {
+  height: 30px;
+  text-align: center;
+  margin: auto 0 auto 10px;
+  padding: 9px;
+}
+
+.card ul .list-group-item {
+  background-color: transparent;
+  color: #1C2128;
+}
+
+.row {
+  background-color: #212529;
+}
+
+.row .col {
+  border-bottom: 1px white solid;
+  padding: 10px;
 }
