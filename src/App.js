@@ -1,13 +1,35 @@
-import SearchBar from "./components/SearchBar";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
+import CoinList from "./components/CoinList";
+import CoinLayout from "./layouts/CoinLayout";
+import Coin, { coinLoader } from "./pages/Coin";
+import CoinError from "./pages/CoinError";
+
 
 function App() {
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route >
+        
+          <Route path="/" element={<CoinList />} />
+        
+          <Route path="coins" element={<CoinLayout/>}>
+            <Route path=":id" element={<Coin />} loader={coinLoader} />
+          </Route>
+        
+        </Route>
+        
+    )
+  )
+
   return (
-    <div className="App container">
-      <header className="mt-4 mb-3">
-        <h1 className="text-light text-center">React Crypto App</h1>
-        <SearchBar />
-      </header>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 

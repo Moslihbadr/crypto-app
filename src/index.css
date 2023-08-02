@@ -8,6 +8,10 @@ body {
   background-color: #1C2128;
 }
 
+.App {
+  max-width: 1000px;
+}
+
 #search-bar {
   margin: 0 auto;
   max-width: 400px;
@@ -15,4 +19,12 @@ body {
 
 svg {
   fill: #F8F9FA;
+}
+
+th {
+  white-space: nowrap;
+}
+
+th img {
+  width: 30px;
 }
