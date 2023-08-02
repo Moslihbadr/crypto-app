@@ -25,6 +25,10 @@ th {
   white-space: nowrap;
 }
 
+td {
+  white-space: nowrap;
+}
+
 td img {
   width: 30px;
 }
@@ -51,6 +55,12 @@ td img {
 }
 
 .row .col {
+  width: 100%;
   border-bottom: 1px white solid;
-  padding: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.coin-price {
+  flex-wrap: wrap;
 }

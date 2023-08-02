@@ -4,9 +4,14 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import CoinList from "./components/CoinList";
+
+// components
+import CoinList from "./pages/CoinList";
+
+// pages
 import Coin, { coinLoader } from "./pages/Coin";
 import CoinError from "./pages/CoinError";
+import NotFound from "./pages/NotFound";
 
 
 function App() {
@@ -18,8 +23,10 @@ function App() {
           <Route path="/" element={<CoinList />} />
         
           <Route path="coins">
-            <Route path=":id" element={<Coin />} loader={coinLoader}  errorElement={CoinError} />
+            <Route path=":id" element={<Coin />} loader={coinLoader}  errorElement={ <CoinError />} />
           </Route>
+
+          <Route path='*' element={<NotFound />} />
         
         </Route>
         
