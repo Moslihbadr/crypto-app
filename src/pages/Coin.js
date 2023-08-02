@@ -1,10 +1,13 @@
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useNavigate } from "react-router-dom"
 
 const Coin = () => {
   const data = useLoaderData();
 
+  const navigate = useNavigate()
+
   return (
     <div className="mt-5 container">
+      <button className="btn btn-outline-primary mb-3" onClick={() => navigate(-1)}>go back</button>
     <div className="card text-center text-light bg-transparent border-light ">
       <div className="card-header border-light d-flex justify-content-center">
         <h1>{data.name}</h1>
