@@ -11,32 +11,37 @@ const CoinList = () => {
   const [ isLoading, setIsLoading ] = useState(true)
 
   useEffect(() => {
-    axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
-      .then((response) => {
-        setCoins(response.data)
-        setIsLoading(false)
-      })
-      .catch((error) => {
-        if (error.request) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Network Error',
-            text: 'Please check your network connection and try again.',
-            darkMode: true
-          })
-          
-          console.log('Network Error:', error.message);
-        } else {
-          console.error('Error!');
-        }
-      });
+    getDataCoins()
   }, []);
+
+  const getDataCoins = () => {
+    axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
+    .then((response) => {
+      setCoins(response.data)
+      setIsLoading(false)
+      console.log('loading');
+    })
+    .catch((error) => {
+      if (error.request) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Network Error',
+          text: 'Please check your network connection and try again.',
+          darkMode: true
+        })
+        
+        console.log('Network Error:', error.message);
+      } else {
+        console.error('Error!');
+      }
+    });
+  }
 
   return (
     <div className="App container-fluid">
     <header className="mt-4 mb-3">
       <h1 className="text-light text-center">Cryptocurrency  App</h1>
-      <SearchBar />
+      <SearchBar getDataCoins={getDataCoins} />
     </header>
     <div className="table-responsive">
       <table className="table table-dark table-hover">

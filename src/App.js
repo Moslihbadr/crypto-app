@@ -26,7 +26,8 @@ function App() {
             <Route path=":id" element={<Coin />} loader={coinLoader}  errorElement={ <CoinError />} />
           </Route>
 
-          <Route path='*' element={<NotFound />} />
+          <Route path='/NotFound' element={<NotFound />} />
+          {/* <Route path='*' element={<NotFound />} /> */}
         
         </Route>
         
