@@ -27,23 +27,13 @@ const CoinList = () => {
       setCoins(response.data)
       setIsLoading(false)
     })
-    .catch((error) => {
-      if (error.request) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Network Error',
-          text: 'Please check your network connection and try again.',
-          darkMode: true
-        })
-        
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'Something went wrong !.',
-          darkMode: true
-        })
-      }
+    .catch(() => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops!',
+        text: 'Something went wrong.',
+        showCloseButton: true,
+      })
     });
   }
 

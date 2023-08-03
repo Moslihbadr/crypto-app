@@ -7,7 +7,7 @@ const Coin = () => {
 
   return (
     <div className="mt-5 container">
-      <button className="btn btn-outline-primary mb-3" onClick={() => navigate(-1)}>go back</button>
+      <button className="btn btn-outline-primary mb-3" onClick={() => navigate('/')}>go back</button>
     <div className="card text-center text-light bg-transparent border-light ">
       <div className="card-header border-light d-flex justify-content-center">
         <h1>{data.name}</h1>

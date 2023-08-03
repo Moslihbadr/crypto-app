@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Crypto App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React-based Crypto App that allows you to view and search for information on the top 100 cryptocurrencies. The app provides various functionalities, including listing the first 100 coins, searching for specific coins, refreshing the data without reloading the page, and displaying detailed information for each coin.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Live View](#live-view)
+- [Usage](#usage)
+- [Powered By](#powered-by)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To get started with the Crypto App, follow these instructions:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository to your local machine:
 
-### `npm test`
+```bash
+git clone https://github.com/Moslihbadr/crypto-app.git
+```
+2. Change into the project directory:
+```bash
+cd crypto-app
+```
+3. Install the required dependencies:
+```
+npm install
+```
+4. Start the development server:
+```
+npm start
+```
+Once the server is up and running, you can access the app by visiting [http://localhost:3000](http://localhost:3000) in your web browser.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- View the top 100 cryptocurrencies in descending order of market capitalization.
+- Search for specific coins using the search bar.
+- Refresh the data to get up-to-date information without reloading the page.
+- Click on the view button to view more detailed information, including its current price, market capitalization, 24-hour price change percentage, 1-hour price change percentage, 7-day price change percentage, 14-day price change percentage, 30-day price change percentage, and 1-year price change percentage.
+- The coin details page also displays the 24-hour high, 24-hour low, market cap, circulating supply, and a description of the coin.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
+The Crypto App is built using the following technologies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React: A JavaScript library for building user interfaces.
+- React Router DOM: Used for handling routing and navigation within the app.
+- Axios: A popular HTTP client for making API requests.
+- Bootstrap: A front-end framework for responsive web design.
+- SweetAlert2: A JavaScript library for creating beautiful, responsive, and customizable alert dialogs.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Live View
+Visit the [Live View](https://react-cryptocurrencyapp.netlify.app) to see the app in action.
 
-### `npm run eject`
+## Usage
+1. Home Page:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- The home page displays the top 100 cryptocurrencies in descending order of market capitalization.
+- Use the search bar to search for specific coins by name or symbol.
+- Click on the refresh button to update the data without reloading the page.
+2. Coin Details Page:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- The details page displays the coin's current price, market capitalization, 24-hour price change percentage, 1-hour price change percentage, 7-day price change percentage, 14-day price change percentage, 30-day price change percentage, and 1-year price change percentage.
+- The coin details page also includes the 24-hour high, 24-hour low, market cap, circulating supply, and a description of the coin.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Powered By
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The Crypto App is powered by the CoinGecko API, which provides the latest cryptocurrency data and market information.
 
-## Learn More
+## Contributing
+Contributions to the Crypto App are welcome. If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+The Crypto App is open-source and distributed under the [MIT License](./LICENSE). Feel free to use, modify, and distribute the code as per the terms of the license.
