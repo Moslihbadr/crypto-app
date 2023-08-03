@@ -9,17 +9,23 @@ const CoinList = () => {
 
   const [ coins, setCoins ] = useState([])
   const [ isLoading, setIsLoading ] = useState(true)
+  const [ filteredCoins, setFilteredCoins ] = useState(coins)
 
   useEffect(() => {
     getDataCoins()
   }, []);
+
+  const filterCoins = (searchInput) => {
+    const filtered = coins.filter((coin) => coin.name.toLowerCase().includes(searchInput.toLowerCase()));
+
+    setFilteredCoins(filtered);
+  };
 
   const getDataCoins = () => {
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
     .then((response) => {
       setCoins(response.data)
       setIsLoading(false)
-      console.log('loading');
     })
     .catch((error) => {
       if (error.request) {
@@ -30,9 +36,13 @@ const CoinList = () => {
           darkMode: true
         })
         
-        console.log('Network Error:', error.message);
       } else {
-        console.error('Error!');
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Something went wrong !.',
+          darkMode: true
+        })
       }
     });
   }
@@ -41,7 +51,7 @@ const CoinList = () => {
     <div className="App container-fluid">
     <header className="mt-4 mb-3">
       <h1 className="text-light text-center">Cryptocurrency  App</h1>
-      <SearchBar getDataCoins={getDataCoins} />
+      <SearchBar getDataCoins={getDataCoins} filterCoins={filterCoins} />
     </header>
     <div className="table-responsive">
       <table className="table table-dark table-hover">
@@ -67,7 +77,7 @@ const CoinList = () => {
             </td>
           </tr>
         )}
-          {coins.map(coin => (
+          {(filteredCoins.length === 0 ? coins : filteredCoins).map(coin => ( // if the filteredCoins array is empty we loop through the coins array
             <tr key={coin.id}>
               <td>{coin.market_cap_rank}</td>
               <td><img src={coin.image} alt="coin"/></td>
